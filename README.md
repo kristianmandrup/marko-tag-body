@@ -1,39 +1,32 @@
-marko-tag-body
-==============
+marko-dynamic-tag
+=================
 
-# Installation
+Installation
+============
 
 ```
-npm install marko-tag-body --save
+npm install marko-dynamic-tag --save
 ```
 
-# Usage
+Usage
+=====
 
 ```xml
-<div>
-    <h1>Hello World</h1>
-    <p tag-body="data.renderBody || data.body">
-    </p>
-</div>
+<dynamic-tag tag-name='h$data.lv' class='ui header'>hello world</dynamic-tag>
 ```
 
 NOTE: If the value of the `tag-body` is left blank then it will default to `data.renderBody`.
 
 ```javascript
 template.renderSync({
-        body: 'My body content'
+        lv: '1'
     });
 ```
 
 Output:
 
 ```html
-<div>
-    <h1>Hello World</h1>
-    <p>
-        My body content
-    </p>
-</div>
+<h1 class='ui header'>hello world</h1>
 ```
 
 ```javascript

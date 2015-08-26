@@ -2,17 +2,18 @@
     "tags": {
         "*": {
             "attributes": {
-                "tag-body": {
+                "tag-name": {
                     "type": "custom",
                     "ignore": true
                 }
             },
             "transformer": {
-                "path": "./src/tag-body-transformer"
+                "path": "./src/dynamic-tag/transformer"
             }
         }
     },
-    "<tag-body>": {
-        "node-class": "./src/tag-body-node.js"
+    "<dynamic-tag>": {
+        "node-class": "./src/dynamic-tag/node.js"
     }
+
 }

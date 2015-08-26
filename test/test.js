@@ -4,30 +4,12 @@ var chai = require('chai');
 chai.config.includeStack = true;
 var expect = require('chai').expect;
 
-describe('marko-tag-body', function() {
-    it('should work with a tag-body attribute that has a value', function() {
+describe('marko-dynamic-tag', function() {
+    it('should work with a tag-name attribute that has a value', function() {
         var template = require('./fixtures/simple.marko');
         var output = template.renderSync({
-            message: 'Body from message'
+            lv: '1'
         });
-        expect(output).to.equal('<div><h1>Hello World</h1><p>Body from message</p></div>');
-
-        output = template.renderSync({
-            renderBody: function(out) {
-                out.write('Body from renderBody()');
-            }
-        });
-        expect(output).to.equal('<div><h1>Hello World</h1><p>Body from renderBody()</p></div>');
-    });
-
-    it('should work with a tag-body attribute that does not have a value', function() {
-        var template = require('./fixtures/attr-no-value.marko');
-
-        var output = template.renderSync({
-            renderBody: function(out) {
-                out.write('Body from renderBody()');
-            }
-        });
-        expect(output).to.equal('<div><h1>Hello World</h1><p>Body from renderBody()</p></div>');
+        expect(output).to.equal("<h1 class='ui header'>hello world</h1>");
     });
 });
