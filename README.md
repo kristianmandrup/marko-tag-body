@@ -11,6 +11,8 @@ npm install marko-dynamic-tag --save
 Usage
 =====
 
+The magic is in the special tag: `tag-name` which can be set to an expression that will dynamically, runtime replace the tag name!!
+
 ```xml
 <dynamic-tag tag-name='h$data.lv' class='ui header'>hello world</dynamic-tag>
 ```
