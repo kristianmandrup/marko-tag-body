@@ -8,6 +8,12 @@ Installation
 npm install marko-dynamic-tag --save
 ```
 
+### Requirements
+
+Currently requires this [marko fork](https://github.com/kristianmandrup/marko/tree/tag-name-transform-hook).
+
+A PR has been submitted to enable a few required hooks ;)
+
 Usage
 =====
 
